@@ -14,10 +14,9 @@ const Footer = () => {
 
   // THEME BASED STYLES
   const footerClasses = `
-    ${
-      isDark
-        ? "bg-gray-950 text-white border-gray-700 shadow-2xl"
-        : "bg-white text-gray-800 border-gray-300 shadow-md"
+    ${isDark
+      ? "bg-gray-950 text-white border-gray-700 shadow-2xl"
+      : "bg-white text-gray-800 border-gray-300 shadow-md"
     }
     pt-10 pb-6 border-t transition-colors duration-500
   `;
@@ -30,18 +29,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TOP SECTION */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b ${
-            isDark ? "border-gray-800" : "border-gray-200"
-          }`}
+          className={`grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b ${isDark ? "border-gray-800" : "border-gray-200"
+            }`}
         >
           {/* BRAND */}
           <div className="flex flex-col space-y-2 md:items-start items-center">
             <div
-              className={`${
-                isDark
+              className={`${isDark
                   ? "from-blue-500 to-teal-500"
                   : "from-indigo-500 to-purple-500"
-              } text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r `}
+                } text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r `}
             >
               Zentra
             </div>
@@ -83,8 +80,8 @@ const Footer = () => {
         {/* BOTTOM */}
         <div className="mt-6 text-center">
           <p className={`text-sm ${textClass}`}>
-            © 2024 TrackingApp. All Rights Reserved. Designed & Developed by
-            NazimUddin.
+            © {new Date().getFullYear()} TrackingApp. All Rights Reserved.
+            Designed & Developed by NazimUddin.
           </p>
         </div>
       </div>

@@ -2,77 +2,78 @@ import { format } from "date-fns";
 import PropTypes from "prop-types";
 import { useTheme } from "../../../hooks/useTheme";
 
-const ClockDisplay = ({ date, timezone, offset, title }) => {
+const ClockDisplay = ({
+  date,
+  timezone,
+  offset,
+  title,
+  titleClass = "",
+  timeClass = "",
+  dateClass = ""
+}) => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   const offsetHr = offset / 60;
 
   return (
-    <div
-      className={`
-    rounded-2xl
-    p-5 md:p-6
-    max-w-full mx-auto
-    backdrop-blur-xl backdrop-saturate-150
-    transition-all duration-300
-    shadow-lg
-    ${
-      isDark
-        ? "bg-white/10 border border-white/15"
-        : "bg-white/70 border border-white/40"
-    }
-  `}
-    >
+    <div className="w-full">
       {/* Header */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-2">
         <h1
-          className={`text-xl md:text-2xl font-semibold tracking-wide
-      ${isDark ? "text-white" : "text-lightPrimaryTextColor"}`}
+          className={`font-semibold tracking-tight truncate mr-4
+          ${isDark ? "text-white" : "text-gray-900"} 
+          ${titleClass || "text-xl md:text-2xl"}`}
         >
           {title}
         </h1>
 
         <span
-          className={`text-xs px-3 py-1 rounded-full uppercase tracking-widest
-      ${isDark ? "bg-white/10 text-gray-300" : "bg-white/60 text-gray-700"}`}
+          className={`shrink-0 text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-widest
+          ${isDark ? "bg-blue-500/20 text-blue-400" : "bg-blue-50 text-blue-600"}`}
         >
-          {timezone}
+          {timezone || "UTC"}
         </span>
       </div>
 
-      {/* Time */}
-      <div className="mb-3">
-        <h4
-          className={`text-xl md:text-3xl font-bold tracking-tight
-      ${isDark ? "text-darkTextColor" : "text-lightTextColor"}`}
+      {/* Time Display */}
+      <div className="flex flex-col mb-4">
+        <div
+          className={`font-mono font-bold tracking-tighter
+          ${isDark ? "text-white" : "text-gray-900"} 
+          ${timeClass || "text-4xl"}`}
         >
-          {format(date, "hh:mm:ss a")}
-        </h4>
+          {format(date, "hh:mm:ss")}
+          <span className="text-xl ml-1 font-sans opacity-70 uppercase">
+            {format(date, "a")}
+          </span>
+        </div>
 
         <p
-          className={`text-sm mt-1 tracking-wide
-      ${isDark ? "text-gray-400" : "text-gray-600"}`}
+          className={`mt-1 font-medium
+          ${isDark ? "text-gray-500" : "text-gray-400"} 
+          ${dateClass || "text-sm"}`}
         >
-          {format(date, "yyyy-MM-dd")}
+          {format(date, "EEEE, MMMM do yyyy")}
         </p>
       </div>
 
-      {/* Bottom Row */}
-      <div className="flex items-center justify-between">
+      {/* Offset Info */}
+      <div className={`flex items-center gap-2 pt-4 border-t ${isDark ? "border-gray-800" : "border-gray-100"}`}>
         <span
-          className={`text-xs tracking-wider
-      ${isDark ? "text-gray-400" : "text-gray-600"}`}
+          className={`text-[10px] font-bold uppercase tracking-widest
+          ${isDark ? "text-gray-600" : "text-gray-400"}`}
         >
-          GMT OFFSET
+          UTC Offset
         </span>
 
         <span
-          className={`text-sm font-semibold px-3 py-1 rounded-lg
-      ${isDark ? "bg-white/10 text-white" : "bg-white/50 text-gray-800"}`}
+          className={`text-xs font-mono font-bold px-2 py-0.5 rounded
+          ${isDark ? "bg-gray-800 text-teal-400" : "bg-gray-50 text-teal-600"}`}
         >
           {offsetHr >= 0
-            ? `GMT+${Math.abs(offsetHr)}`
-            : `GMT-${Math.abs(offsetHr)}`}
+            ? `+${Math.abs(offsetHr).toFixed(1)}`
+            : `-${Math.abs(offsetHr).toFixed(1)}`}
+          h
         </span>
       </div>
     </div>
@@ -80,10 +81,13 @@ const ClockDisplay = ({ date, timezone, offset, title }) => {
 };
 
 ClockDisplay.propTypes = {
-  date: PropTypes.object,
+  date: PropTypes.instanceOf(Date).isRequired,
   timezone: PropTypes.string,
-  offset: PropTypes.number,
-  title: PropTypes.string,
+  offset: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  titleClass: PropTypes.string,
+  timeClass: PropTypes.string,
+  dateClass: PropTypes.string,
 };
 
 export default ClockDisplay;

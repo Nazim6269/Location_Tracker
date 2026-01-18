@@ -3,61 +3,43 @@ import { useTheme } from "../../hooks/useTheme";
 import ClockListItem from "./ClockListItem";
 
 /**
- * ClockList component renders the list of created clocks
- * @param {Object} props - The component props.
- * @param {Array} props.clocks - Array of clock objects.
- * @param {Function} props.updateClock - Function to update a clock.
- * @param {Function} props.deleteClock - Function to delete a clock.
- * @param {Object} props.localClock - Local clock object.
- * @returns {JSX.Element} - JSX element representing Clock list.
+ * ClockList component renders the list of created clocks.
  */
 const ClockList = ({ clocks, updateClock, deleteClock, localClock }) => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
-  const bgLight = "bg-gray-50/60 border border-gray-200";
-  const bgDark = "bg-gray-900 border border-gray-700";
-
   return (
     <div
       className={`
-        ${isDark ? bgDark : bgLight} 
-        shadow-2xl 
-        rounded-2xl 
-        p-7 
-        w-full md:w-5/6 lg:w-3/4 xl:w-2/3 mx-auto
+        w-full
         transition-colors duration-500
       `}
     >
-      <h3
-        className={`${
-          isDark ? "" : "text-lightPrimaryTextColor"
-        } text-3xl font-bold mb-4 bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400`}
-      >
-        Other Clocks
-      </h3>
-      <hr
-        className={`border-t ${
-          isDark ? "border-gray-700" : "border-gray-300"
-        } mb-6`}
-      />
-
       {clocks.length === 0 ? (
-        <p
+        <div
           className={`
-            p-4 rounded-lg italic
-            ${
-              isDark
-                ? "bg-gray-800 text-gray-400"
-                : "bg-gray-50/60 text-gray-500"
+            flex flex-col items-center justify-center
+            p-12 rounded-3xl border-2 border-dashed
+            transition-all duration-300
+            ${isDark
+              ? "bg-gray-800/20 border-gray-700/50 text-gray-400"
+              : "bg-white border-gray-200 text-gray-500 shadow-sm"
             }
           `}
         >
-          There are no other clocks added. Please use the Add New Clock button
-          to track a new timezone.
-        </p>
+          <div className={`p-4 rounded-full mb-4 ${isDark ? "bg-gray-800" : "bg-gray-100"}`}>
+            <svg className="w-12 h-12 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p className="text-xl font-medium mb-2">No Other Clocks Added</p>
+          <p className="text-sm opacity-70 text-center max-w-xs">
+            Start tracking global timezones by using the 'Add' button on your local clock.
+          </p>
+        </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {clocks.map((clock) => (
             <ClockListItem
               key={clock.id}
@@ -73,7 +55,6 @@ const ClockList = ({ clocks, updateClock, deleteClock, localClock }) => {
   );
 };
 
-// PropTypes
 ClockList.propTypes = {
   clocks: PropTypes.arrayOf(
     PropTypes.shape({
@@ -82,15 +63,11 @@ ClockList.propTypes = {
       timezone: PropTypes.string,
       offset: PropTypes.number,
     })
-  ),
-  updateClock: PropTypes.func,
-  deleteClock: PropTypes.func,
+  ).isRequired,
+  updateClock: PropTypes.func.isRequired,
+  deleteClock: PropTypes.func.isRequired,
   localClock: PropTypes.shape({
-    title: PropTypes.string,
-    offset: PropTypes.number,
-    timezone: PropTypes.string,
-    type: PropTypes.string,
-    date: PropTypes.string,
+    date: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
 };
 
