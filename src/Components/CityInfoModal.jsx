@@ -20,7 +20,7 @@ const CityInfoModal = ({ city, onClose, isDark }) => {
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
             <div
-                className={`relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 transform scale-95 animate-in zoom-in-95 duration-300 ${isDark ? "bg-gray-900 border border-gray-800 text-white" : "bg-white text-gray-800"
+                className={`relative w-full max-w-lg rounded-md overflow-hidden shadow-md transition-all duration-500 transform scale-95 animate-in zoom-in-95 duration-300 ${isDark ? "bg-gray-900 border border-gray-800 text-white" : "bg-white text-gray-800"
                     }`}
             >
                 {/* Close Button */}
@@ -60,7 +60,7 @@ const CityInfoModal = ({ city, onClose, isDark }) => {
                                 <div className="space-y-3">
                                     {data.holidays.length > 0 ? (
                                         data.holidays.map((h, i) => (
-                                            <div key={i} className={`p-4 rounded-2xl border ${isDark ? "bg-gray-800/40 border-gray-800" : "bg-gray-50 border-gray-100"}`}>
+                                            <div key={i} className={`p-4 rounded-md border ${isDark ? "bg-gray-800/40 border-gray-800" : "bg-gray-50 border-gray-100"}`}>
                                                 <p className="font-bold text-sm mb-1">{h.name}</p>
                                                 <p className="text-xs opacity-50">{new Date(h.date).toLocaleDateString(undefined, { dateStyle: 'long' })}</p>
                                             </div>
@@ -84,7 +84,7 @@ const CityInfoModal = ({ city, onClose, isDark }) => {
                                                 href={n.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className={`block p-4 rounded-2xl border transition-all hover:scale-[1.02] ${isDark ? "bg-gray-800/40 border-gray-800 hover:bg-gray-800" : "bg-gray-50 border-gray-100 hover:bg-white hover:shadow-md"
+                                                className={`block p-4 rounded-md border transition-all hover:scale-[1.02] ${isDark ? "bg-gray-800/40 border-gray-800 hover:bg-gray-800" : "bg-gray-50 border-gray-100 hover:bg-white hover:shadow-md"
                                                     }`}
                                             >
                                                 <p className="font-bold text-sm leading-tight mb-2 line-clamp-2">{n.title}</p>

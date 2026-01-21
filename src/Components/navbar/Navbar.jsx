@@ -75,7 +75,7 @@ const Navbar = () => {
 
           {/* MOBILE BUTTON */}
           <button
-            className={`md:hidden p-2 rounded-lg ${textColor} focus:ring-2 focus:ring-teal-400`}
+            className={`md:hidden p-2 rounded-md ${textColor} focus:ring-2 focus:ring-teal-400`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? "✖" : "☰"}

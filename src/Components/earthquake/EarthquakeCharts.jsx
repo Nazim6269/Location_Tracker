@@ -51,7 +51,7 @@ const EarthquakeCharts = ({ quakes, isDark }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {/* Magnitude Distribution Bar Chart */}
             <div
-                className={`p-6 rounded-2xl border transition-all duration-300 ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100 shadow-md"
+                className={`p-6 rounded-md border transition-all duration-300 ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100 shadow-md"
                     }`}
             >
                 <h3 className={`text-sm font-semibold mb-6 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
@@ -79,7 +79,7 @@ const EarthquakeCharts = ({ quakes, isDark }) => {
 
             {/* Severity Pie Chart */}
             <div
-                className={`p-6 rounded-2xl border transition-all duration-300 ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100 shadow-md"
+                className={`p-6 rounded-md border transition-all duration-300 ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100 shadow-md"
                     }`}
             >
                 <h3 className={`text-sm font-semibold mb-6 ${isDark ? "text-gray-400" : "text-gray-600"}`}>

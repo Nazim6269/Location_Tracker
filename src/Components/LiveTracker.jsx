@@ -14,7 +14,7 @@ export default function LiveTracker() {
   if (error && !position)
     return (
       <div
-        className={`rounded-xl p-5 shadow-md border
+        className={`rounded-md p-5 shadow-md border
         ${isDark
             ? "bg-red-500/10 text-red-400 border-red-500/20"
             : "bg-red-50 text-red-600 border-red-200"
@@ -28,7 +28,7 @@ export default function LiveTracker() {
   if (!position && loading)
     return (
       <div
-        className={`rounded-xl p-5 border animate-pulse tracking-widest uppercase
+        className={`rounded-md p-5 border animate-pulse tracking-widest uppercase
         ${isDark
             ? "bg-gray-800 text-gray-300 border-gray-700"
             : "bg-white text-gray-600 border-gray-200"
@@ -41,7 +41,7 @@ export default function LiveTracker() {
   /* ---------- MAIN UI ---------- */
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl p-6 w-auto md:w-[380px] transition-colors duration-500 border
+      className={`relative overflow-hidden rounded-md p-6 w-auto md:w-[380px] transition-colors duration-500 border
         ${isDark
           ? "bg-gray-800 border-gray-700 text-white shadow-md"
           : "bg-white border-gray-100 text-gray-800 shadow-md"

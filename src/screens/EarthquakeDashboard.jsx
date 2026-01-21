@@ -81,9 +81,9 @@ const EarthquakeDashboard = () => {
               {/* LEFT = DATA PANEL */}
               <div
                 className={`
-                rounded-xl shadow-md p-6 transition-all duration-300
+                rounded-md shadow-md p-6 transition-all duration-300
                 ${isDark
-                    ? "bg-gray-800 shadow-xl shadow-black/40"
+                    ? "bg-gray-800 shadow-md shadow-black/40"
                     : "bg-white text-gray-800 shadow-md border border-gray-100"
                   }
               `}
@@ -95,7 +95,7 @@ const EarthquakeDashboard = () => {
                     value={minMag}
                     onChange={(e) => setMinMag(+e.target.value)}
                     className={`
-                    w-full mt-2 rounded-xl p-3
+                    w-full mt-2 rounded-md p-3
                     ${isDark
                         ? "bg-gray-900 border border-gray-600 text-white"
                         : "bg-white border border-gray-300"
@@ -119,7 +119,7 @@ const EarthquakeDashboard = () => {
                     return (
                       <div
                         className={`
-                      rounded-xl p-5 mb-6
+                      rounded-md p-5 mb-6
                       ${isDark ? "bg-gray-900" : "bg-gray-50"}
                     `}
                       >
@@ -166,7 +166,7 @@ const EarthquakeDashboard = () => {
                       <div
                         key={q.id}
                         className={`
-                        rounded-xl p-4 transition
+                        rounded-md p-4 transition
                         ${isDark
                             ? "bg-gray-900 hover:bg-gray-700"
                             : "bg-gray-50 hover:bg-gray-100"
@@ -198,7 +198,7 @@ const EarthquakeDashboard = () => {
               {/* RIGHT = MAP PANEL */}
               <div
                 className={`
-                rounded-xl overflow-hidden shadow-md transition
+                rounded-md overflow-hidden shadow-md transition
                 ${isDark
                     ? "bg-gray-800 shadow-black/40"
                     : "bg-white shadow-md border border-gray-100"
@@ -228,7 +228,7 @@ const EarthquakeDashboard = () => {
                 <button
                   key={v}
                   onClick={() => setMinMag(v)}
-                  className={`px-6 py-2 rounded-xl text-sm font-semibold transition-all ${isDark
+                  className={`px-6 py-2 rounded-md text-sm font-semibold transition-all ${isDark
                     ? "bg-gray-800 hover:bg-gray-700 text-white"
                     : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                     } ${v === minMag ? "hidden" : ""}`}

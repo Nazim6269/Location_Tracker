@@ -21,7 +21,7 @@ const Alerts = ({ alerts }) => {
 
   return (
     <div
-      className={`rounded-2xl p-5 border transition-colors duration-300
+      className={`rounded-md p-5 border transition-colors duration-300
         ${isDark
           ? "bg-gray-800 border-gray-700 text-white"
           : "bg-white border-gray-100 text-gray-800 shadow-md"
@@ -39,7 +39,7 @@ const Alerts = ({ alerts }) => {
         {alerts.map((a, i) => (
           <div
             key={i}
-            className={`flex justify-between items-center px-4 py-3 rounded-xl ${color(
+            className={`flex justify-between items-center px-4 py-3 rounded-md ${color(
               a.level
             )}`}
           >

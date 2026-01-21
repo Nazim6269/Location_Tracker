@@ -89,7 +89,7 @@ const WeatherInfo = ({ city }) => {
   return (
     <div
       className={`
-    rounded-2xl p-6 w-full max-w-md space-y-4 transition-all duration-300 border
+    rounded-md p-6 w-full max-w-md space-y-4 transition-all duration-300 border
     ${isDark
           ? "bg-gray-800 border-gray-700 text-white shadow-md"
           : "bg-white border-gray-100 text-gray-800 shadow-md"
@@ -158,19 +158,19 @@ const WeatherInfo = ({ city }) => {
 
       {/* Info grid */}
       <div className="grid grid-cols-2 gap-4 text-sm mt-4">
-        <div className={`p-3 rounded-xl ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
+        <div className={`p-3 rounded-md ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
           <p className="text-[10px] uppercase tracking-wider opacity-60 mb-1">Humidity</p>
           <p className="font-bold">{data.humidity}%</p>
         </div>
-        <div className={`p-3 rounded-xl ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
+        <div className={`p-3 rounded-md ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
           <p className="text-[10px] uppercase tracking-wider opacity-60 mb-1">Wind</p>
           <p className="font-bold">{data.wind} m/s</p>
         </div>
-        <div className={`p-3 rounded-xl ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
+        <div className={`p-3 rounded-md ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
           <p className="text-[10px] uppercase tracking-wider opacity-60 mb-1">Pressure</p>
           <p className="font-bold">{data.pressure} hPa</p>
         </div>
-        <div className={`p-3 rounded-xl ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
+        <div className={`p-3 rounded-md ${isDark ? "bg-gray-900/50" : "bg-gray-50"}`}>
           <p className="text-[10px] uppercase tracking-wider opacity-60 mb-1">Visibility</p>
           <p className="font-bold">{data.visibility} km</p>
         </div>

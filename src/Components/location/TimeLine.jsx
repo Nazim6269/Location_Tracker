@@ -13,7 +13,7 @@ const Timeline = () => {
 
   return (
     <div
-      className={`rounded-2xl p-6 transition-all duration-300 border
+      className={`rounded-md p-6 transition-all duration-300 border
         ${isDark
           ? "bg-gray-800 border-gray-700 text-white"
           : "bg-white border-gray-100 text-gray-800 shadow-md"

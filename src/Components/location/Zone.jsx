@@ -18,7 +18,7 @@ const Zone = ({ zoneName, status, location, speed, signal, progress }) => {
 
   return (
     <div
-      className={`relative rounded-2xl p-6 transition-all duration-300 border ${containerStyle}`}
+      className={`relative rounded-md p-6 transition-all duration-300 border ${containerStyle}`}
     >
       {/* HEADER */}
       <div className="flex justify-between items-center mb-4">

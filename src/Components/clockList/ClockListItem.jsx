@@ -22,7 +22,7 @@ const ClockListItem = ({ clock, updateClock, deleteClock, localClock }) => {
     <div
       className={`
         group relative
-        rounded-2xl 
+        rounded-md 
         p-6
         transition-all duration-500
         hover:scale-[1.01]

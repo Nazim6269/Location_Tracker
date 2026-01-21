@@ -94,7 +94,7 @@ const AddNewWeather = ({ onAdd }) => {
         onClick={handleAdd}
         disabled={!selected}
         className={`
-          px-6 py-3 rounded-xl font-semibold text-white
+          px-6 py-3 rounded-md font-semibold text-white
           transition-all min-w-[120px]
           disabled:opacity-50 disabled:cursor-not-allowed
           ${isDark

@@ -18,9 +18,9 @@ const AnalyticStats = () => {
       {stats.map((item, i) => (
         <div
           key={i}
-          className={`rounded-2xl p-4 text-center transition-all duration-300 border hover:scale-105
+          className={`rounded-md p-4 text-center transition-all duration-300 border hover:scale-105
             ${isDark
-              ? "bg-gray-800 border-gray-700 text-white shadow-xl shadow-black/20"
+              ? "bg-gray-800 border-gray-700 text-white shadow-md shadow-black/20"
               : "bg-white border-gray-100 text-gray-800 shadow-md"
             }
           `}

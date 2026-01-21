@@ -8,7 +8,7 @@ export const Info = ({ label, value }) => {
   return (
     <div
       className={`
-    rounded-lg p-2 text-center border
+    rounded-md p-2 text-center border
     ${isDark
           ? "bg-gray-700 border-gray-600 text-white"
           : "bg-gray-50 border-gray-100 text-gray-900 shadow-sm"

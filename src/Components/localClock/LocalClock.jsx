@@ -20,10 +20,10 @@ const LocalClock = ({ clock, updateLocalClock, createNewClock }) => {
     <div
       className={`
         relative overflow-hidden
-        rounded-2xl p-8
+        rounded-md p-8
         border transition-all duration-500
         ${isDark
-          ? "bg-gray-800 border-gray-700 shadow-lg"
+          ? "bg-gray-800 border-gray-700 shadow-md"
           : "bg-white border-gray-200 shadow-md"
         }
       `}

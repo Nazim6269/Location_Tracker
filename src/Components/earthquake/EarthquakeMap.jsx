@@ -17,7 +17,7 @@ const EarthquakeMap = ({ quakes }) => {
     : [20, 0]; // fallback world center
 
   return (
-    <div className="h-[700px] rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+    <div className="h-[700px] rounded-md overflow-hidden border border-white/10 shadow-md">
       <MapContainer
         center={center}
         zoom={2}

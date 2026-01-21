@@ -20,7 +20,7 @@ const ClockList = ({ clocks, updateClock, deleteClock, localClock }) => {
         <div
           className={`
             flex flex-col items-center justify-center
-            p-12 rounded-2xl border-2 border-dashed
+            p-12 rounded-md border-2 border-dashed
             transition-all duration-300
             ${isDark
               ? "bg-gray-800 border-gray-700 text-gray-400"

@@ -22,7 +22,7 @@ const MapComponent = ({ lat, lng, zone }) => {
   return (
     <div
       className={`
-        h-[650px] rounded-2xl overflow-hidden transition-colors duration-500 border
+        h-[650px] rounded-md overflow-hidden transition-colors duration-500 border
         ${isDark
           ? "bg-gray-800 border-gray-700 shadow-md"
           : "bg-white border-gray-100 shadow-md"
@@ -33,7 +33,7 @@ const MapComponent = ({ lat, lng, zone }) => {
         center={[lat, lng]}
         zoom={15}
         scrollWheelZoom
-        className="h-full w-full rounded-3xl"
+        className="h-full w-full rounded-md"
       >
         <TileLayer
           attribution="© OpenStreetMap contributors"

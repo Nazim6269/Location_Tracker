@@ -7,7 +7,7 @@ const LoadingCard = ({ text }) => {
 
   return (
     <div
-      className={`rounded-xl p-5 border animate-pulse 
+      className={`rounded-md p-5 border animate-pulse 
         tracking-widest uppercase text-sm
         ${isDark
           ? "bg-gray-800 text-gray-300 border-gray-700"

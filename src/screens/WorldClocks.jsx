@@ -99,7 +99,7 @@ const WorldClocks = () => {
           <div className="flex flex-col md:flex-row gap-6 items-center w-full md:w-auto">
             {/* Time Slider */}
             <div
-              className={`flex flex-col gap-2 p-4 rounded-2xl w-full md:w-80 border ${isDark ? "bg-gray-800 border-gray-700" : "bg-gray-50 border-gray-200"
+              className={`flex flex-col gap-2 p-4 rounded-md w-full md:w-80 border ${isDark ? "bg-gray-800 border-gray-700" : "bg-gray-50 border-gray-200"
                 }`}
             >
               <div className="flex justify-between text-xs font-bold uppercase tracking-wider opacity-60">
@@ -114,7 +114,7 @@ const WorldClocks = () => {
                 max="12"
                 value={offset}
                 onChange={(e) => setOffset(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                className="w-full h-2 bg-gray-200 rounded-md appearance-none cursor-pointer accent-indigo-500"
               />
               <div className="flex justify-between text-[10px] opacity-40">
                 <span>-12h</span>
@@ -126,7 +126,7 @@ const WorldClocks = () => {
             <button
               onClick={() => setHour24(!hour24)}
               className={`
-                px-6 py-3 rounded-xl font-bold shadow-md hover:shadow-lg transition-all duration-300 whitespace-nowrap
+                px-6 py-3 rounded-md font-bold shadow-md hover:shadow-md transition-all duration-300 whitespace-nowrap
                 ${theme === "dark"
                   ? "bg-gray-800 border border-gray-600 text-white hover:bg-gray-700"
                   : "bg-white border border-gray-200 text-gray-800 hover:bg-gray-50"
@@ -152,10 +152,10 @@ const WorldClocks = () => {
                 key={clock.id}
                 onClick={() => setSelectedCity(clock.city)}
                 className={`
-                  rounded-2xl p-6 flex flex-col transition-all duration-500 border hover:scale-[1.02] cursor-pointer relative
+                  rounded-md p-6 flex flex-col transition-all duration-500 border hover:scale-[1.02] cursor-pointer relative
                   ${isDark
-                    ? "bg-gray-800 border-gray-700 shadow-xl shadow-black/20"
-                    : "bg-white border-gray-100 shadow-lg"
+                    ? "bg-gray-800 border-gray-700 shadow-md shadow-black/20"
+                    : "bg-white border-gray-100 shadow-md"
                   }
                 `}
               >

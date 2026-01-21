@@ -14,7 +14,7 @@ const LocationAnalytics = ({ isDark }) => {
 
     if (!history || history.length < 2) {
         return (
-            <div className={`p-8 text-center rounded-2xl border ${isDark ? "bg-gray-800 border-gray-700 text-gray-400" : "bg-white border-gray-100 text-gray-400 shadow-md"}`}>
+            <div className={`p-8 text-center rounded-md border ${isDark ? "bg-gray-800 border-gray-700 text-gray-400" : "bg-white border-gray-100 text-gray-400 shadow-md"}`}>
                 <p>Collecting data points for live analytics...</p>
             </div>
         );
@@ -23,7 +23,7 @@ const LocationAnalytics = ({ isDark }) => {
     const textColor = isDark ? "#94a3b8" : "#475569";
 
     return (
-        <div className={`p-6 rounded-2xl border transition-all duration-300 ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100 shadow-md"}`}>
+        <div className={`p-6 rounded-md border transition-all duration-300 ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100 shadow-md"}`}>
             <div className="flex justify-between items-center mb-6">
                 <div>
                     <h3 className={`text-lg font-bold ${isDark ? "text-white" : "text-gray-900"}`}>

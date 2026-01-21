@@ -51,7 +51,7 @@ const ClockForm = ({
         ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}
         border
         shadow-md 
-        rounded-xl 
+        rounded-md 
         p-6 md:p-8 
         max-w-lg mx-auto 
         space-y-6 
@@ -76,7 +76,7 @@ const ClockForm = ({
           onChange={handleChange}
           className={`
             w-full p-3 
-            rounded-lg 
+            rounded-md 
             text-gray-900 border
             ${isDark
               ? "bg-gray-700 border-gray-600 text-white focus:ring-blue-500"
@@ -104,7 +104,7 @@ const ClockForm = ({
           value={formValues.timezone}
           onChange={handleChange}
           className={`
-            w-full p-3 rounded-lg 
+            w-full p-3 rounded-md 
             text-gray-900 border
             ${isDark
               ? "bg-gray-700 border-gray-600 text-white focus:ring-blue-500"
@@ -137,7 +137,7 @@ const ClockForm = ({
             value={formValues.offset / 60}
             onChange={handleChange}
             className={`
-              w-full p-3 rounded-lg
+              w-full p-3 rounded-md
               text-gray-900 border
               ${isDark
                 ? "bg-gray-700 border-gray-600 text-white focus:ring-blue-500"
@@ -160,14 +160,14 @@ const ClockForm = ({
       <button
         type="submit"
         className={` w-full
-    flex-1 text-sm font-semibold py-2 rounded-lg
+    flex-1 text-sm font-semibold py-2 rounded-md
     transition-all duration-300 select-none
     text-white
     ${isDark
             ? "bg-blue-600 hover:bg-blue-700"
             : "bg-blue-600 hover:bg-blue-700"
           }
-     shadow-md hover:shadow-lg
+     shadow-md hover:shadow-md
   `}
       >
         {edit ? "Update Clock" : "Create Clock"}

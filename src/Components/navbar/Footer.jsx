@@ -15,7 +15,7 @@ const Footer = () => {
   // THEME BASED STYLES
   const footerClasses = `
     ${isDark
-      ? "bg-gray-950 text-white border-gray-700 shadow-2xl"
+      ? "bg-gray-950 text-white border-gray-700 shadow-md"
       : "bg-white text-gray-800 border-gray-300 shadow-md"
     }
     pt-10 pb-6 border-t transition-colors duration-500

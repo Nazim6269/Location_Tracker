@@ -27,7 +27,7 @@ const ClockActions = ({
       className={`
     ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}
     border
-    rounded-xl px-3 py-3
+    rounded-md px-3 py-3
     max-w-full mx-auto
     transition-all duration-300
   `}
@@ -88,7 +88,7 @@ const ClockActions = ({
       {isEdit && (
         <div
           className={`
-        mt-3 p-3 rounded-lg
+        mt-3 p-3 rounded-md
         ${isDark
               ? "bg-gray-900 border border-gray-700"
               : "bg-gray-50 border border-gray-200"
@@ -115,7 +115,7 @@ const ClockActions = ({
       {isCreate && (
         <div
           className={`
-        mt-3 p-3 rounded-lg
+        mt-3 p-3 rounded-md
         ${isDark
               ? "bg-gray-900 border border-gray-700"
               : "bg-gray-50 border border-gray-200"

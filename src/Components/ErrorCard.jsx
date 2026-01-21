@@ -6,11 +6,10 @@ const ErrorCard = ({ message }) => {
   const isDark = theme === "dark";
   return (
     <div
-      className={`rounded-xl p-5 shadow-md border 
-        ${
-          isDark
-            ? "bg-red-500/10 text-red-400 border-red-500/20"
-            : "bg-red-50 text-red-600 border-red-200"
+      className={`rounded-md p-5 shadow-md border 
+        ${isDark
+          ? "bg-red-500/10 text-red-400 border-red-500/20"
+          : "bg-red-50 text-red-600 border-red-200"
         }`}
     >
       <h3 className="font-semibold mb-2">⚠️ Error</h3>

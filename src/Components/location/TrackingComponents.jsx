@@ -35,7 +35,7 @@ const TrackingComponents = () => {
   if (error && !position)
     return (
       <div
-        className={`rounded-xl p-5 shadow-md border 
+        className={`rounded-md p-5 shadow-md border 
         ${isDark
             ? "bg-red-500/10 text-red-400 border-red-500/20"
             : "bg-red-50 text-red-600 border-red-200"
@@ -49,7 +49,7 @@ const TrackingComponents = () => {
   if (!position && loading)
     return (
       <div
-        className={`rounded-xl p-5 border animate-pulse 
+        className={`rounded-md p-5 border animate-pulse 
         tracking-widest uppercase text-sm
         ${isDark
             ? "bg-gray-800 text-gray-300 border-gray-700"
